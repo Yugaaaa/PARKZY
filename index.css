@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --ink: #1f2a2a;
+    --ink-soft: #526160;
+    --limestone: #f6f3ec;
+    --paper: #fffefa;
+    --teal: #0a7d73;
+    --teal-dark: #075f57;
+    --teal-pale: #e4f4ef;
+    --moss: #3f7b55;
+    --amber: #a96a0f;
+    --clay: #b94c40;
+    --line: #dedbd2;
+    --card-shadow: 0 4px 20px -2px rgba(31, 42, 42, 0.06), 0 2px 6px -1px rgba(31, 42, 42, 0.04);
+    --card-shadow-hover: 0 10px 25px -3px rgba(31, 42, 42, 0.10), 0 4px 10px -2px rgba(31, 42, 42, 0.06);
+    --font-serif: "DM Serif Display", Georgia, serif;
+    --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  html.dark {
+    --ink: #eef5f1;
+    --ink-soft: #8eaba5;
+    --limestone: #0f1a18;
+    --paper: #142623;
+    --teal: #14a094;
+    --teal-dark: #0a7d73;
+    --teal-pale: #1a3934;
+    --moss: #4ea873;
+    --amber: #d98e1f;
+    --clay: #e0685b;
+    --line: #2a3b38;
+    --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.35), 0 2px 6px -1px rgba(0, 0, 0, 0.2);
+    --card-shadow-hover: 0 10px 25px -3px rgba(0, 0, 0, 0.45), 0 4px 10px -2px rgba(0, 0, 0, 0.3);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--limestone);
+    color: var(--ink);
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom Utility Classes mapped to Curb Atlas theme tokens */
+.bg-limestone { background-color: var(--limestone); }
+.bg-paper { background-color: var(--paper); }
+.bg-teal-primary { background-color: var(--teal); }
+.bg-teal-dark { background-color: var(--teal-dark); }
+.bg-teal-pale { background-color: var(--teal-pale); }
+.bg-moss { background-color: var(--moss); }
+.bg-amber-custom { background-color: var(--amber); }
+.bg-clay { background-color: var(--clay); }
+
+.text-ink { color: var(--ink); }
+.text-ink-soft { color: var(--ink-soft); }
+.text-teal-primary { color: var(--teal); }
+.text-teal-dark { color: var(--teal-dark); }
+.text-moss { color: var(--moss); }
+.text-amber-custom { color: var(--amber); }
+.text-clay { color: var(--clay); }
+
+.border-line { border-color: var(--line); }
+.border-teal-primary { border-color: var(--teal); }
+.border-teal-pale { border-color: var(--teal-pale); }
+.border-moss { border-color: var(--moss); }
+.border-clay { border-color: var(--clay); }
+.border-amber-custom { border-color: var(--amber); }
+
+.shadow-curb { box-shadow: var(--card-shadow); }
+.shadow-curb-hover { box-shadow: var(--card-shadow-hover); }
+
+/* Editorial small-caps & label styles */
+.curb-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-soft);
+}
